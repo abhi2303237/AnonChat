@@ -5,12 +5,35 @@ var uniqid = require('uniqid');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var app= express();
 
+//////////////////Database connection//////////////////////
+
+// var mysql = require('mysql')
+// var connection = mysql.createConnection({
+//   host     : 'localhost',
+//   user     : 'dbuser',
+//   password : 's3kreee7',
+//   database : 'my_db'
+// });
+
+// connection.connect()
+
+// connection.query('SELECT 1 + 1 AS solution', function (err, rows, fields) {
+//   if (err) throw err
+
+//   console.log('The solution is: ', rows[0].solution)
+// })
+
+// connection.end()
+
+///////////////////////////////////////////////////////////////////
+/////////////////////Hello World///////////////////////////////////
 
 app.get('/', function (req, res) {
 	res.writeHead(200, {'Content-Type': 'application/json'});
     res.write('Hello World');
 })
-
+//////////////////////////////////////////////////////////////////
+/////////////////////Get Uid//////////////////////////////////////
 
 app.get('/register',urlencodedParser,function(req,res){
 	res.writeHead(200, {'Content-Type': 'text/html'});
@@ -20,7 +43,8 @@ app.get('/register',urlencodedParser,function(req,res){
 	//insert id
     //fetch uid
 })
-
+//////////////////////////////////////////////////////////////////
+////////////////////Get Partner///////////////////////////////////
 app.get('/getpartner',urlencodedParser,function(req,res){
 	res.writeHead(200, {'Content-Type': 'text/html'});
 	var uid='uid of partner';
